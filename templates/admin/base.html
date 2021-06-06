@@ -1,0 +1,54 @@
+{% load static %}
+
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="robots" content="noindex,nofollow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+  <!-- Custom -->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.3.1/css/all.css">
+
+  <!-- For at_random/about/essay content -->
+  {% block extra_head %}{% endblock %}
+
+  <script src="https://kit.fontawesome.com/9a80da2fe7.js" crossorigin="anonymous"></script>
+
+  <meta name="theme-color" content="#fafafa">
+
+  <title>Tarot</title>
+
+</head>
+
+<body>
+
+  <!-- Top Bar -->
+  {% include 'partials/_topbar.html' %}
+
+  <!-- NavBar -->
+
+  {% include 'partials/_navbar.html' %}
+
+  <div class="main-container">
+      {% block content %} {% endblock %}
+  </div>
+
+  <!-- Footer -->
+  {% include 'partials/_footer.html' %}
+
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+  <script src="{% static 'js/main.js' %} "></script>
+  <script src="{% static 'js/tarot_key.js' %} "></script>
+</body>
+
+</html>

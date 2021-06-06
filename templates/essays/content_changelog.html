@@ -1,0 +1,77 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="robots" content="noindex,nofollow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% load static %}
+
+{% block extra_head %}
+
+<style>
+
+    body {
+      width: 800px;
+      margin: 0 auto;
+
+    }
+    h2 {
+      margin: 50px auto;
+      text-align: center;
+    }
+
+    h5 {
+      font-size: 2em;
+      margin-top: 50px auto;
+      text-align: center;
+    }
+
+    article {
+      padding: 35px;
+    }
+
+    .strike {
+      text-decoration: line-through dotted red;
+    }
+
+    .done { text-decoration: line-through dotted red;}
+
+    ul {
+      margin-left: -50px;
+    }
+    li {
+      line-height: 150%;
+    }
+
+    .emphasis {
+      font-size: 175%;
+    }
+
+</style>
+{% endblock %}
+
+{% block content %}    
+
+<article id="articleTop">
+
+  {% if changes %}
+    
+    {% for change in changes %}
+
+        <center><h1>{{ change.title }}</h1></center>
+        
+        <ul>
+        {% for point in change.log_to_bullets %}
+            <li>{{point}}</li>
+        {% endfor %}
+        </ul>
+
+    {% endfor %}
+
+  {% endif %}
+
+</article>
+
+{% endblock %} 

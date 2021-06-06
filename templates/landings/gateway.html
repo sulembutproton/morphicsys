@@ -1,0 +1,62 @@
+<!-- <center>{% block title %} (null) so far {% endblock %}</center> -->
+{% load static %}
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="{% static 'css/gateway.css' %}" type="text/css">
+
+{% block content %}
+
+<section id="login" class="bg-light py-5">
+    <div>
+      {% include 'partials/_alerts.html' %}
+    </div>
+    <h1> This website is hermetically sealed. </h1>
+    <img src="https://placekitten.com/200/287"> 
+    <!--     <img src="{% static 'img/santa2.jpg' %}">-->
+    <h3> Exhibit 1: Kittens</h3>
+    
+    <!-- This is Santa Meurte. She prevents people from entering. If you have a passcode, enter it here: -->
+              <!-- Alerts -->
+              
+
+               <!--  {# 
+                
+                <form action="{% url 'index' %}" method="POST">
+                  {% csrf_token %}
+
+                <div class="form-group">
+                  <label for="username">Username:</label>
+                  <input type="text" name="username" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="password2">Password:</label>
+                  <input type="password" name="password" class="form-control" required>
+                </div>
+                <input type="submit" value="Login" class="btn btn-secondary btn-block">
+                <br>Not a member yet?  <a href="{% url 'register' %}">Register!</a>
+              </form>
+           </div> 
+           
+           #} -->
+
+    <div>
+      <form action="{% url 'index' %}" method="POST">
+          {% csrf_token %}
+        <!-- <H1>Alternatively:</h1>
+          <h4>(Bypass username and password requirement)</h4> -->
+         <div class="form-group">
+          <label for="passphrase">Enter Your Pass Phrase:</label>
+          <input type="text" name="passphrase" class="form-control" required>
+        </div>
+        <input type="submit" value="Submit" class="btn btn-secondary btn-block">
+
+      </form>
+    </div>
+
+</section>
+
+  
+{% endblock %}
+
+  

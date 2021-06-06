@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+    
+{% load static %}
+
+{% block extra_head %}
+  <link rel="stylesheet" href="{% static 'css/essay-main.css' %}">
+{% endblock %}
+
+{% block content %}    
+
+<article class="article">
+<div class="essay">
+
+<h1> What is going on here?</h1>
+
+
+{% if abouts %}
+   {% for about in abouts %}    
+      <p class="text-justify"> {{ about.text_content|safe }} </p>
+   {% endfor %}
+{% endif %}
+</div><!-- end essay -->
+</article>
+
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block extra_head %}
+  <!-- e.g. <link rel="stylesheet" href="{% static 'css/random-normalize.css' %}"> -->
+  <link rel="stylesheet" href="{% static 'css/essay-main.css' %}">
+
+{% endblock %}
+
+{% block content %}
+
+    <article class="article">
+        <div class="essay">
+            <h2> {{ article.title|safe }} </h2>
+            <p class="text-justify"> {{ article.content|safe }} </p>
+        </div>
+    </article>
+    
+{% endblock %}

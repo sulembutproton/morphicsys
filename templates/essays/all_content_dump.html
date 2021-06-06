@@ -1,0 +1,94 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="robots" content="noindex,nofollow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>CONTENT DUMP</title>
+
+{% comment %} {% extends 'base.html' %} {% endcomment %}
+
+{% comment %} {% load static %}{% endcomment %}
+     
+    <!-- {% comment %} <link rel="stylesheet" href="{% static 'css/essay-main.css' %}">{% endcomment %} -->
+     
+     <style>
+          h1 {
+            text-align: center;
+            margin-bottom: 0px;
+            margin-left: 0px;
+          }
+      </style>
+</head>
+<body>
+{% block content %}
+
+      <div class="container">
+
+            <h1>Generators</h1>
+            {% for generator in generators %}
+                  <h2>{{ generator.title|safe }}</h2>
+                  <p>{{ generator.description|safe }}</p>
+                  <img class="tarot-small-key right" src="{{ generator.tarot_card_image }}">
+                  <h3>Galileo</h3>
+                  <p>{{ generator.galileo_content|safe }}</p>
+                  <h3>FLOSS</h3>
+                  <p>{{ generator.f_loss_content|safe }}</p>
+                  <h3>St Paul</h3>
+                  <p>{{ generator.st_paul_content|safe }}</p>            
+            {% endfor %}
+
+            <h1>Essays (Articles)</h1>
+            {% for essay_article in essay_articles %}
+                  <h2>{{ essay_article.title }}</h2>
+                  <p>{{ essay_article.content|safe }}</p>
+            {% endfor %}
+            
+            <h1>Slashdots (Articles) </h1>
+            {% for slashdot in slashdots %}
+                  <h2>{{ slashdot.title }}</h2>
+                  <p>{{ slashdot.introduction|safe }}</p><br>
+                  <h1>Conclusion</h1>
+                  <p>{{ slashdot.conclusion|safe }}</p>
+            {% endfor %}
+            
+
+            <h1>Watchtowers (Articles)</h1>
+            {% for watchower in watchowers %}
+                  <h2>{{ watchower.title }}</h2>
+                  <p>{{ watchower.introduction|safe }}</p><br>
+                  <h1>Conclusion</h1>
+                  <p>{{ watchower.conclusion|safe }}</p>            
+            {% endfor %}
+            
+            
+            <h1>Content Changes (Articles) </h1>
+            {% for content_change in content_changes %}
+                  <h2>{{ content_change.title }}</h2>
+                  <p>{{ content_change.content_changes_logged|safe }}</p>
+            {% endfor %}
+
+            <h1>Objections (Articles)</h1>
+            {% for objections_article in objections_articles %}
+                  <h2>{{ objections_article.title }}</h2>
+                  <p>{{ objections_article.content|safe }}</p>
+            {% endfor %}
+
+
+            <h1>Bibliography (Articles)</h1>
+            {% for biblio_article in biblio_articles %}
+                  <p>{{ biblio_article.biblio }}</p>
+            {% endfor %}
+      </div>
+
+<script>
+if(window.location.pathname.split('/')[2] === ""){
+  history.pushState("","",{{generator.number}});
+}
+</script>
+
+{% endblock %}
+</body>
+</html>
