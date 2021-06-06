@@ -2,7 +2,7 @@ import pandas
 import numpy
 from faker import Faker
 from faker.providers import lorem
-from pathlib import Path
+#from pathlib import Path
 from functools import partial
 
 fake = Faker()  # generates fake data includes lorem
@@ -30,7 +30,7 @@ if __name__ == "__main__":
         3: "https://i.imgur.com/OdRnGXo.jpg",
         19: "https://i.imgur.com/70Bdg9W.jpg",
         9: "https://i.imgur.com/mo9aYsa.jpg",
-        1 "https://i.imgur.com/VZx2NYe.jpg",
+        1: "https://i.imgur.com/VZx2NYe.jpg",
         2: "https://i.imgur.com/jR9VPO7.jpg",
         13: "https://i.imgur.com/bMo96Zf.jpg",
         8: "https://i.imgur.com/jl3Xpmt.jpg",

@@ -1,20 +1,34 @@
 {% extends 'base.html' %}
-    
+
 {% load static %}
 {% block extra_head %}
   <link rel="stylesheet" href="{% static 'css/essay-main.css' %}">
 {% endblock %}
 
-{% block content %}    
+{% block content %}
 
 <article class="article">
-<div class="essay">   
-{% if essay_lists %}
-   {% for essay_list in essay_lists %}    
-      <p class="text-justify"> {{ essay_list.text_content|safe }} </p>
-   {% endfor %}
-{% endif %}
-
+<div class="essay">
+    <h3>E-Books</h3>
+    <a href="https://www.pythonanywhere.com/user/morphicsys/files/home/morphicsys/mainsite/media/Learn-the-Tarot-Card-Meanings.pdf" target="_blank">Learn The Tarot Card Meanings</a><br>
+    <a href="https://www.pythonanywhere.com/user/morphicsys/files/home/morphicsys/mainsite/media/Learning%20Tarot.pdf" target="_blank">Learning Tarot</a><br>
+    <a href="https://www.pythonanywhere.com/user/morphicsys/files/home/morphicsys/mainsite/media/Learning%20the%20Tarot.pdf" target="_blank">Learning the Tarot</a><br>
+    <a href="https://www.pythonanywhere.com/user/morphicsys/files/home/morphicsys/mainsite/media/Guide%20to%20Tarot%20Cards.pdf" target="_blank">Guide to Tarot Cards</a><br>
+    <a href="https://www.pythonanywhere.com/user/morphicsys/files/home/morphicsys/mainsite/media/TarotKeys.pdf" target="_blank">Tarot Keys</a><br>
+    <a href="https://www.pythonanywhere.com/user/morphicsys/files/home/morphicsys/mainsite/media/oracle-of-the-tarot.pdf" target="_blank">The Oracle of the Tarot</a><br>
+    <a href="https://www.pythonanywhere.com/user/morphicsys/files/home/morphicsys/mainsite/media/workbook_5_simple_steps.pdf" target="_blank">workbook 5 Simple Steps</a><br>
+    <a href="https://www.pythonanywhere.com/user/morphicsys/files/home/morphicsys/mainsite/media/papus_the_tarot_of_the_bohemians.pdf" target="_blank">The Tarot of the Bohemians</a><br>
+    <a href="https://www.pythonanywhere.com/user/morphicsys/files/home/morphicsys/mainsite/media/mathers-and-felkin-golden-dawn-book-to-the-tarot-1888.pdf" target="_blank">Book to the Tarot</a><br>
+    <a href="https://www.pythonanywhere.com/user/morphicsys/files/home/morphicsys/mainsite/media/Waite_Pictorial_Key_to_the_Tarot.pdf" target="_blank">The Pictorial Key to the Tarot</a><br>
+    <a href="https://www.pythonanywhere.com/user/morphicsys/files/home/morphicsys/mainsite/media/Tarot%20Of%20Marseilles.pdf" target="_blank">Tarot de Marseille</a><br>
+    <a href="https://www.pythonanywhere.com/user/morphicsys/files/home/morphicsys/mainsite/media/Lost%20Hollow%20Tarot.pdf" target="_blank">Lost Hollow Tarot</a><br>
+    <a href="https://www.pythonanywhere.com/user/morphicsys/files/home/morphicsys/mainsite/media/Easy%20Guide%20for%20a%20Rider-Waite%20Tarot%20Reading.pdf" target="_blank">Easy Guide for a Rider-Waite Tarot Reading | Ask Astrology</a><br>
+    <a href="https://www.pythonanywhere.com/user/morphicsys/files/home/morphicsys/mainsite/media/Ashwood-Tarot-Oracle-System-Guide.pdf" target="_blank">Ashwood Tarot Oracle System Guide</a><br>
+    <a href="https://www.pythonanywhere.com/user/morphicsys/files/home/morphicsys/mainsite/media/MAJOR%20%26%20MINOR%20ARCANA%20QUICK%20REFERENCE%20SHEET.pdf" target="_blank">MAJOR & MINOR ARCANA QUICK REFERENCE SHEET</a><br>
+    <a href="https://www.pythonanywhere.com/user/morphicsys/files/home/morphicsys/mainsite/media/kabbalah-for-beginners.pdf" target="_blank">Kabbalah for Beginners</a><br>
+    <a href="https://www.pythonanywhere.com/user/morphicsys/files/home/morphicsys/mainsite/media/keys_to_kabbalah.pdf" target="_blank">Keys to Kabbalah</a><br>
+    <a href="https://www.pythonanywhere.com/user/morphicsys/files/home/morphicsys/mainsite/media/Kabbalah%20Unveiled.pdf" target="_blank">THE KABBALAH UNVEILED</a><br>
+    <a href="https://www.pythonanywhere.com/user/morphicsys/files/home/morphicsys/mainsite/media/KABBALAH_MAGIC.pdf" target="_blank">Kabbalah, Magic & the Great Work of Self Transformation</a>
 </div><!-- end essay -->
 </article>
 

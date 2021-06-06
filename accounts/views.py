@@ -1,11 +1,11 @@
-from django.conf import settings
-from django.contrib.auth import logout as logout_func
-from django.http import HttpResponseRedirect
+#from django.conf import settings
+#from django.contrib.auth import logout as logout_func
+#from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
-from django.contrib import messages, auth
+from django.contrib import messages #, auth
 from django.contrib.auth.models import User
-from django.urls import reverse
-from accounts.models import AuthToggle,PassPhrase
+#from django.urls import reverse
+from accounts.models import AuthToggle, PassPhrase
 
 def register(request):
     if request.method == "POST":
@@ -68,25 +68,27 @@ def login(request):
         return render(request, 'accounts/login.html')
 '''
 
-'''def dashboard(request):
-    return render(request, 'landings/portal.html')'''
+'''
+def dashboard(request):
+    return render(request, 'landings/portal.html')
+'''
 
 def index(request):
     if request.method == "POST":
 
         passphrase = request.POST.get('passphrase')
-        
+
         gateway = False
 
         protection = AuthToggle.objects.first().enable_protection
-        
+
         if passphrase:
-            # check for all passphrase values in the database 
+            # check for all passphrase values in the database
             for x in PassPhrase.objects.all().values():
                 if passphrase == x['passphrase'] and protection:
                     gateway = True
                     break
-        if gateway:        
+        if gateway:
             return redirect('portal')
         else:
             messages.error(request, 'Invalid credentials')

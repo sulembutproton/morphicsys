@@ -13,7 +13,7 @@ as per command line arguments
 import sqlite3
 import pandas
 import argparse
-import tempfile
+#import tempfile
 import numpy
 from pathlib import Path
 from shutil import copyfile
@@ -121,7 +121,7 @@ if __name__ == "__main__":
         for record in csv_data.itertuples(index=False):
             # get url to image, due to origional file naming 0 is treated without 0 postfix
             image_file = f"{THUMBNAILS}/{image_fnames[record.number]}"
-            """ generators_generator : 
+            """ generators_generator :
             id, title, number, tarot_card_image, astrological, alchemical, intelligence, hebrew_letter, letter_meaning, description, galileo_content, f_loss_content, st_paul_content, f_loss_bullets, st_paul_bullets, description_bullets, slashdot_position, watchtower_position, tarot_card_thumbnail """
 
 
@@ -137,10 +137,10 @@ if __name__ == "__main__":
                 else:
                     value = None
                 data[field] = value
-            
+
             data_values = tuple(value for value in data.values())
             placeholders = ('?,' * len(data)).rstrip(',')
             sql = f"INSERT INTO {TABLE_NAME} {tuple(fields)} VALUES ({placeholders})"
             db.cursor.execute(sql, data_values)
-            
+
         db.connection.commit()
